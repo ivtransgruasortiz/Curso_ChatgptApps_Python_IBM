@@ -1,0 +1,62 @@
+[
+  {
+    "ID": 1,
+    "NOMBRE": "Lámpara Solar Nebula",
+    "DESCRIPCION": "Luz solar con sensor de movimiento.",
+    "PRECIO": 24.99
+  },
+  {
+    "ID": 2,
+    "NOMBRE": "Café Galáctico",
+    "DESCRIPCION": "Cápsulas con sabor a chocolate y canela.",
+    "PRECIO": 12.50
+  },
+  {
+    "ID": 3,
+    "NOMBRE": "Cuaderno de Ideas Invisibles",
+    "DESCRIPCION": "Tinta que desaparece tras 72 horas.",
+    "PRECIO": 8.75
+  },
+  {
+    "ID": 4,
+    "NOMBRE": "Auriculares Zenwave",
+    "DESCRIPCION": "Auriculares con cancelación de ruido.",
+    "PRECIO": 59.00
+  },
+  {
+    "ID": 5,
+    "NOMBRE": "Mochila Origami X",
+    "DESCRIPCION": "Mochila plegable con bolsillos ocultos.",
+    "PRECIO": 38.90
+  },
+  {
+    "ID": 6,
+    "NOMBRE": "Velas EcoFuego",
+    "DESCRIPCION": "Velas de soja con mechas de bambú.",
+    "PRECIO": 17.20
+  },
+  {
+    "ID": 7,
+    "NOMBRE": "Bolígrafo Cuántico",
+    "DESCRIPCION": "Escribe sin tinta sobre cualquier superficie.",
+    "PRECIO": 14.95
+  },
+  {
+    "ID": 8,
+    "NOMBRE": "Cartas: Mentiras Elegantes",
+    "DESCRIPCION": "Juego de cartas con poderes ocultos.",
+    "PRECIO": 22.40
+  },
+  {
+    "ID": 9,
+    "NOMBRE": "Plantómetro Mini",
+    "DESCRIPCION": "Sensor para controlar plantas desde el móvil.",
+    "PRECIO": 29.99
+  },
+  {
+    "ID": 10,
+    "NOMBRE": "Almohada Gravedad Zero",
+    "DESCRIPCION": "Almohada ergonómica con gel frío.",
+    "PRECIO": 45.60
+  }
+]

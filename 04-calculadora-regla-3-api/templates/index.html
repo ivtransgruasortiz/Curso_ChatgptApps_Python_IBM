@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Regla de Tres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 1.1em;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #104E8B;
+        }
+        .resultado {
+            margin-top: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: green;
+        }
+        .error {
+            margin-top: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Regla de Tres</h1>
+
+    <form method="POST">
+        <label for="a">A</label>
+        <input type="text" name="a" id="a" required value="{{ request.form.a if request.method == 'POST' else '' }}">
+
+        <label for="b">B</label>
+        <input type="text" name="b" id="b" required value="{{ request.form.b if request.method == 'POST' else '' }}">
+
+        <label for="c">C</label>
+        <input type="text" name="c" id="c" required value="{{ request.form.c if request.method == 'POST' else '' }}">
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <div class="resultado">Resultado: {{ "%.2f"|format(resultado) }}</div>
+    {% endif %}
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+</html>

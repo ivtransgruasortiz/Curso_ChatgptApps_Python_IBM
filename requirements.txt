@@ -5,6 +5,9 @@ plotly
 cufflinks
 scikit-learn
 seaborn
+flask
+requests
+dotenv
 #PyQt6
 #PySide6
 #PyQt5
