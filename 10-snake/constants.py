@@ -1,0 +1,11 @@
+# constants.py
+
+WINDOW_WIDTH = 600
+WINDOW_HEIGHT = 600
+CELL_SIZE = 20
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+ORANGE = (255, 165, 0)
+
+FPS = 10

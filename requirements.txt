@@ -6,8 +6,15 @@ cufflinks
 scikit-learn
 seaborn
 flask
+Flask-Cors
+openai
 requests
 dotenv
+fastapi
+uvicorn
+pydantic
+pygame
+fpdf2
 #PyQt6
 #PySide6
 #PyQt5

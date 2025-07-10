@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat con Davinci</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial; padding: 30px; }
+        #respuesta { margin-top: 20px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>Chat con el modelo Davinci 003</h1>
+    <form id="chat-form">
+        <input type="text" id="mensaje" placeholder="Escribe tu mensaje..." style="width: 300px;" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="respuesta"></div>
+
+    <script>
+        $("#chat-form").submit(function(e) {
+            e.preventDefault();
+            const mensaje = $("#mensaje").val();
+            $("#respuesta").html("Pensando...");
+
+            $.ajax({
+                url: "/chat",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ mensaje }),
+                success: function(data) {
+                    $("#respuesta").html(data.respuesta);
+                },
+                error: function(err) {
+                    $("#respuesta").html("Error al contactar con el servidor.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

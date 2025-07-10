@@ -24,4 +24,8 @@ def index():
     return render_template('index.html', resultado=resultado, error=error)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    try:
+        app.run(debug=True)
+        # app.run(host='127.0.0.1', port=8500, debug=True)
+    except OSError as e:
+        print("Error: El puerto 5000 está en uso o bloqueado.")
