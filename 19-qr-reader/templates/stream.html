@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>QR en Vivo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Escáner QR en Tiempo Real</h1>
+        <img src="{{ url_for('video') }}" id="video-stream">
+        <div id="qr-result">Esperando código QR...</div>
+    </div>
+
+    <script>
+        async function actualizarQR() {
+            const res = await fetch("/qr_data");
+            const data = await res.json();
+            document.getElementById("qr-result").textContent = data.qr_data
+                ? "QR detectado: " + data.qr_data
+                : "Esperando código QR...";
+            setTimeout(actualizarQR, 1000);
+        }
+        actualizarQR();
+    </script>
+</body>
+</html>

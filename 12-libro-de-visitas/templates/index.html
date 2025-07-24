@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Libro de Visitas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #4a90e2;
+      --light: #f9f9f9;
+      --dark: #333;
+      --border: #ddd;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: var(--primary);
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+
+    .messages {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .entry {
+      background-color: white;
+      border-left: 5px solid var(--primary);
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .entry .name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .entry .date {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .entry p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      form, .messages {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>📖 Libro de Visitas</h1>
+
+  <form method="post">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" placeholder="Tu nombre..." required>
+
+    <label for="message">Mensaje</label>
+    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="messages">
+    {% for msg in messages %}
+      <div class="entry">
+        <div class="name">{{ msg.name }}</div>
+        <div class="date">{{ msg.date }}</div>
+        <p>{{ msg.message }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

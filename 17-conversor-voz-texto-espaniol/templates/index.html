@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Traductor de Voz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Traductor de Voz Multilingüe</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="audio_file"><strong>Sube un archivo de audio (.wav) en español:</strong></label><br><br>
+        <input type="file" name="audio_file" accept=".wav" required><br><br>
+        <button type="submit">Traducir</button>
+    </form>
+
+    {% if transcript %}
+    <div class="result-box">
+        <h2>Texto Reconocido:</h2>
+        <textarea readonly>{{ transcript }}</textarea>
+
+        <h2>Traducciones:</h2>
+        <label>Inglés:</label>
+        <textarea readonly>{{ translations['en'] }}</textarea>
+
+        <label>Francés:</label>
+        <textarea readonly>{{ translations['fr'] }}</textarea>
+
+        <label>Italiano:</label>
+        <textarea readonly>{{ translations['it'] }}</textarea>
+
+        <label>Alemán:</label>
+        <textarea readonly>{{ translations['de'] }}</textarea>
+    </div>
+    {% endif %}
+</body>
+</html>

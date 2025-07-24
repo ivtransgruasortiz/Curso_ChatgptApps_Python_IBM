@@ -15,6 +15,14 @@ uvicorn
 pydantic
 pygame
 fpdf2
+spotipy
+deep-translator
+deep_translator
+pyttsx3
+SpeechRecognition
+qrcode
+opencv-python
+pyzbar
 #PyQt6
 #PySide6
 #PyQt5
