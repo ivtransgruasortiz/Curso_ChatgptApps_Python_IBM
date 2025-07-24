@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Pokédex{% endblock %}
+
+{% block content %}
+<table>
+  <thead>
+    <tr>
+        <th>ID</th>
+        <th>Imagen</th>
+        <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in pokemons %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ p.id }}.png"></td>
+        <td><a href="{{ url_for('pokemon_detail', pokemon_id=p.id) }}">{{ p.name }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

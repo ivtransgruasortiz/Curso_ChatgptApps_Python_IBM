@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 50 Spotify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Top 50 Global - Spotify</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Canción</th>
+                    <th>Artista</th>
+                    <th>Álbum</th>
+                    <th>Previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for track in tracks %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="{{ track.spotify_url }}" target="_blank">{{ track.name }}</a></td>
+                    <td>{{ track.artist }}</td>
+                    <td><img src="{{ track.image }}" alt="Portada" class="cover"></td>
+                    <td>
+                        {% if track.preview_url %}
+                        <audio controls>
+                            <source src="{{ track.preview_url }}" type="audio/mpeg">
+                            Tu navegador no soporta audio.
+                        </audio>
+                        {% else %}
+                        <span class="no-preview">No disponible</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

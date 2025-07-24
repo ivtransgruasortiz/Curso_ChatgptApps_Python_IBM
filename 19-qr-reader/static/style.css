@@ -1,0 +1,33 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+#video-stream {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 12px;
+    border: 5px solid #3498db;
+    margin-bottom: 1rem;
+}
+
+#qr-result {
+    font-size: 1.2rem;
+    background: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{{ pokemon.name }} - Pokédex{% endblock %}
+
+{% block content %}
+<div class="pokemon-detail">
+  <h2>{{ pokemon.name }} (ID: {{ pokemon.id }})</h2>
+  <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+  <p><strong>Descripción:</strong> {{ pokemon.description }}</p>
+  <p><strong>Habilidades:</strong> {{ pokemon.abilities | join(', ') }}</p>
+  <a href="{{ url_for('index') }}">← Volver a la Pokédex</a>
+</div>
+{% endblock %}
